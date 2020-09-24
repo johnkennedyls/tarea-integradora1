@@ -32,4 +32,24 @@ public class Restaurant {
 		nit = ni;
 		adminName = admi;
 	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public String getNit() {
+		return nit;
+	}
+
+
+	public String getAdminName() {
+		return adminName;
+	}
+	
+	//Métods
+	
+	
+	
 }

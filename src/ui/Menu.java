@@ -38,10 +38,19 @@ public class Menu {
 	
 
 	private void addRestaurant() {
-	   	System.out.println();
-		
-		
-		
+	   	String name;
+	   	String nit;
+	   	String adminName;
+	   	
+	   	System.out.println("Write the new restaurant name");
+	   	name = sc.nextLine();
+	   	System.out.println("Write the new restaurant nit");
+	   	nit = sc.nextLine();
+	   	System.out.println("Write the new restaurant adminName");
+	   	adminName = sc.nextLine();
+	   	
+	   	programSystem.addRestaurant(name, nit, adminName);  
+	   	
 	}
 
 	private int readOption() {
