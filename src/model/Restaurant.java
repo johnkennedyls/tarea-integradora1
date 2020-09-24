@@ -1,5 +1,8 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Restaurant {
        
 	
@@ -22,6 +25,10 @@ public class Restaurant {
 	 */
 	private String adminName;
 	
+	private List<Product> products;
+		
+	
+	
 	
 	//----------------------
 	// Constructor
@@ -31,6 +38,7 @@ public class Restaurant {
 		name = na;
 		nit = ni;
 		adminName = admi;
+		products = new ArrayList<Product>();
 	}
 
 
@@ -48,8 +56,9 @@ public class Restaurant {
 		return adminName;
 	}
 	
-	//Métods
-	
+	public void addProduct() {
+		
+	}
 	
 	
 }

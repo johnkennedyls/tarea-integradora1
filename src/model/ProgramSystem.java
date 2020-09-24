@@ -16,19 +16,24 @@ public class ProgramSystem {
 	}
 	
 	public void addRestaurant(String name, String nit, String adminName) {
-		if(notIsNewRestaurant(name, nit)) {
+		if(isNewRestaurant(name, nit)) {
 		Restaurant newRestaurant = new Restaurant(name, nit, adminName);
 		restaurants.add(newRestaurant);
 		}
 	}
 
-	public boolean notIsNewRestaurant(String name, String nit) {
-        boolean notIsNew;
-        for (int i = 0; i < restaura; i++) {
-			
+	public boolean isNewRestaurant(String name, String nit) {
+        boolean isNew = true;
+        for (int i = 0; i < restaurants.size() || !isNew ; i++) {
+			if(name == restaurants.get(i).getName() || nit == restaurants.get(i).getNit())
+			{
+				isNew = false;
+			}else {
+				
+			}
 		}
         
-		return notIsNew;
+		return isNew;
 	}
 	
 

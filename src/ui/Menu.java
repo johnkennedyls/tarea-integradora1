@@ -30,12 +30,18 @@ public class Menu {
 	private void executeOperation(int option) {
 		switch(option) {
 		case 1: addRestaurant();             break;
+		case 2: addProduct();                break;
 		default:     break;
 		}
 		
 	}
 
 	
+
+	private void addProduct() {
+		
+		
+	}
 
 	private void addRestaurant() {
 	   	String name;
@@ -66,6 +72,7 @@ public class Menu {
 	    menu += "          ORDER SYSTEM\n";
 	    menu  = "=============================\n";
 	    menu += "1. Add a restaurant\n";
+	    menu += "2. Add a product\n";
 	    menu += "Please enter the option: ";
 
 		return menu;
