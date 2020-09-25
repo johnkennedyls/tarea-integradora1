@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+import exceptions.NegativeCostException;
 
 public class Restaurant {
        
@@ -56,8 +57,10 @@ public class Restaurant {
 		return adminName;
 	}
 	
-	public void addProduct() {
-		
+	public void addProduct(String code, String name, String description, double cost, String restaurantNit)
+			throws NegativeCostException {
+		Product p = new Product(code, name, description, cost, restaurantNit);
+		products.add(p);
 	}
 	
 	

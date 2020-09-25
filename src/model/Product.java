@@ -1,4 +1,5 @@
 package model;
+import exceptions.NegativeCostException;
 
 public class Product {
      
@@ -10,11 +11,15 @@ public class Product {
 	private int quantity;
 	
 	
-	public Product(String co, String na, String de, double cos, String rn) {
+	public Product(String co, String na, String de, double cos, String rn)
+			throws NegativeCostException  {
 		
 		code = co;
 		name = na;
 		description = de;
+		if(cost<0) {
+		  throw new NegativeCostException();
+		}
 		cost = cos;
 		restaurantNit = rn;
 		

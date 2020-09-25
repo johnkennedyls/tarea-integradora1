@@ -39,7 +39,17 @@ public class Menu {
 	
 
 	private void addProduct() {
-		
+	System.out.println("Write the new product code");
+	String code = sc.nextLine();
+	System.out.println("Write the new product name");
+	String name = sc.nextLine();
+	System.out.println("Write the new product description");
+	String product = sc.nextLine();
+	System.out.println("Write the new product cost");
+	double cost = sc.nextInt();
+	int restaurantsSize = programSystem.getRestaurants().size();
+	programSystem.getRestaurants().get(restaurantsSize).
+	
 		
 	}
 
