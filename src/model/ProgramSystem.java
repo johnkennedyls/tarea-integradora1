@@ -35,6 +35,20 @@ public class ProgramSystem {
         
 		return isNew;
 	}
+
+	public Restaurant searchRestaurant(String restaurantName) {
+		boolean found = false;
+		Restaurant searched = null;
+		
+		for(int i= 0; i< restaurants.size()&& found;i++) {
+			if(restaurants.get(i).getName() == restaurantName) {
+				searched = restaurants.get(i);
+				found = true;
+			}
+		}
+		return searched;
+		
+	}
 	
 
 }

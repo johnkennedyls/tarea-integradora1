@@ -1,6 +1,8 @@
 package ui;
 
 import java.util.Scanner;
+
+import exceptions.NegativeCostException;
 import model.*;
 
 public class Menu {
@@ -39,17 +41,27 @@ public class Menu {
 	
 
 	private void addProduct() {
+		
+	System.out.println("Write the restaurant name to add product");
+	String restaurantName = sc.nextLine();
+	Restaurant restaurant = programSystem.searchRestaurant(restaurantName);
+	if(restaurant != null) {
 	System.out.println("Write the new product code");
 	String code = sc.nextLine();
 	System.out.println("Write the new product name");
 	String name = sc.nextLine();
 	System.out.println("Write the new product description");
-	String product = sc.nextLine();
+	String description = sc.nextLine();
 	System.out.println("Write the new product cost");
 	double cost = sc.nextInt();
-	int restaurantsSize = programSystem.getRestaurants().size();
-	programSystem.getRestaurants().get(restaurantsSize).
-	
+	String restaurantNit = restaurant.getNit();
+	try {
+		restaurant.addProduct(code, name, description, cost, restaurantNit);
+	} catch (NegativeCostException e) {
+		
+		e.printStackTrace();
+	}
+	}
 		
 	}
 
