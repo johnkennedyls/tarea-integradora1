@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Client {
@@ -21,6 +23,7 @@ public class Client {
 		firstName = fn;
 		phone = ph;
 		direction = di;
+		orders = new ArrayList<Order>();
 		
 		
 	}
@@ -55,9 +58,17 @@ public class Client {
 		return direction;
 	}
 	
+	public void addOrder( State state) {
+		Order o = new Order( state);
+		orders.add(o);
+	}
 	
 	
-	
+	public List<Order> getOrders(){
+		return orders;
+	}
+
+
 	
 	
 	

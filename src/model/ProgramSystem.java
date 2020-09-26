@@ -1,6 +1,7 @@
 package model;
 
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -13,10 +14,15 @@ public class ProgramSystem {
 	
 	public ProgramSystem() {
 		restaurants = new LinkedList<>();
+		clients = new ArrayList<Client>();
 	}
 	
 	public List<Restaurant> getRestaurants(){
 		return restaurants;
+	}
+	
+	public List<Client> getClients(){
+		return clients;
 	}
 	
 	public void addRestaurant(String name, String nit, String adminName) {
@@ -58,8 +64,33 @@ public class ProgramSystem {
 		Client c = new Client(typeId, numId, lastName, FirstName, phone, direction);
 		clients.add(c);
 	}
+
+	public Client searchClient(String clientName) {
+		Client searched = null;
+		for (int i = 0; i < clients.size(); i++) {
+			if(clientName.contentEquals(clients.get(i).getFirstName())) {
+				searched = clients.get(i);
+			}
+		}
+		return searched;
+	}
+	
+	public int getIndexClient(String clientName) {
+		int index = 0;
+		for (int i = 0; i < clients.size(); i++) {
+			if(clientName.contentEquals(clients.get(i).getFirstName())) {
+				index = i;
+			}
+		
+	}
+		return index;
 	
 	
 	}
-
+	
+	
+	
+	
 }
+
+

@@ -5,6 +5,7 @@ import java.util.Scanner;
 import exceptions.NegativeCostException;
 import model.*;
 import model.TypeId;
+import model.State;
 
 
 public class Menu {
@@ -36,18 +37,52 @@ public class Menu {
 		case 1: addRestaurant();             break;
 		case 2: addProduct();                break;
 		case 3: addClient();                 break;
+		case 4: addOrder();                  break;
 		case 0: exit();                      break;
-		default:     break;
+		default:                             break;
 		}
 		
 	}
 
 	
 
+	private void addOrder() {
+		System.out.println("Write restaurant to do order");
+		String restaurantName = sc.nextLine();
+		System.out.println("Write the client first name");
+		String clientName = sc.nextLine();
+		Client client = programSystem.searchClient(clientName);
+		if(client != null) {
+		System.out.println("Write the order State");
+		System.out.println( "REQUESTED");
+		System.out.println("IN_PROCESS");
+		System.out.println("SENT");
+		System.out.println("DELIVERED");
+		String stateSc = sc.nextLine().toUpperCase();
+		State state = State.valueOf(stateSc);
+		
+		int clientIndex = programSystem.getIndexClient(clientName);
+		int orderIndex = (programSystem.getClients().get(clientIndex).getOrders().size())-1;
+		Restaurant restaurant = programSystem.searchRestaurant(restaurantName);		
+		
+		programSystem.getClients().get(clientIndex).addOrder(state);
+		Order order = programSystem.getClients().get(clientIndex).getOrders().get(orderIndex);
+		order.setClientCode(client.getNumId());
+		order.setRestaurantNit(restaurant.getNit());
+		
+		System.out.println("Order added");
+				
+		
+		}else {
+			System.out.println("The restaurant has'nt added");
+		}
+		
+	}
+
 	private void addClient() {
 		System.out.println("Write the client type ID");
 		System.out.println("Write CC for Cedula ciudadan");
-		String typeIdSc = sc.nextLine();
+		String typeIdSc = sc.nextLine().toUpperCase();
 		TypeId typeId = TypeId.valueOf(typeIdSc);
 		System.out.println("Write the client ID number");
 		String numId = sc.nextLine();
@@ -135,6 +170,8 @@ public class Menu {
 	    menu += "1. Add a restaurant.\n";
 	    menu += "2. Add a product.\n";
 	    menu += "3. Add a client.\n";
+	    menu += "4. Add a order.\n";
+	    menu += "5. Add product to the order\n";
 	    menu += "0. Exit.";
 	    menu += "Please enter the option: ";
 

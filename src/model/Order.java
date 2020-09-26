@@ -1,8 +1,9 @@
 package model;
 
-import java.rmi.server.UID;
+
 import java.util.Date;
 import java.util.UUID;
+import model.Product;
 
 public class Order {
 
@@ -18,11 +19,11 @@ public class Order {
 	private State state;
 	
 	
-	public Order(String co, Date da, String clco, String restaurantNit, State st) {
+	public Order(  State st) {
 		code = generateRamdomCode();
-		date = da; 
-		clientCode = clco;
-		this.restaurantNit = restaurantNit;
+		date = new Date(); 
+		clientCode ="";
+		this.restaurantNit = "";
 		state = st;
 	}
 
@@ -59,6 +60,32 @@ public class Order {
 	public State getState() {
 		return state;
 	}
+
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+
+	public void setClientCode(String clientCode) {
+		this.clientCode = clientCode;
+	}
+
+
+	public void setRestaurantNit(String restaurantNit) {
+		this.restaurantNit = restaurantNit;
+	}
+
+
+	public void setState(State state) {
+		this.state = state;
+	}
+	 
 	
 	
 	
