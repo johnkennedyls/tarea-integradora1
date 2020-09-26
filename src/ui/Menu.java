@@ -5,6 +5,7 @@ import java.util.Scanner;
 import exceptions.NegativeCostException;
 import model.*;
 
+
 public class Menu {
 	
 	private Scanner sc;
@@ -33,7 +34,7 @@ public class Menu {
 		switch(option) {
 		case 1: addRestaurant();             break;
 		case 2: addProduct();                break;
-		case 3: add
+		case 3: addClient();                 break;
 		case 0: exit();                      break;
 		default:     break;
 		}
@@ -41,6 +42,25 @@ public class Menu {
 	}
 
 	
+
+	private void addClient() {
+		System.out.println("Write the client type ID");
+		System.out.println("Write CC for Cedula ciudadan");
+		TypeId typeId = sc.nextLine();
+		System.out.println("Write the client ID number");
+		String numId = sc.nextLine();
+		System.out.println("Write the client last name");
+		String lastName = sc.nextLine();
+		System.out.println("Write the client first name");
+		String firstName = sc.nextLine();
+		System.out.println("Write the client phone");
+		String phone = sc.nextLine();
+		System.out.println("Write the client direction");
+		String direction = sc.nextLine();
+		
+		programSystem.addClient(typeId, numId, lastName, firstName, phone, direction);
+		
+	}
 
 	private void exit() {
 		sc.close();

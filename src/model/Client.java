@@ -26,6 +26,36 @@ public class Client {
 		
 		
 	}
+
+
+	public TypeId getTypeId() {
+		return typeId;
+	}
+
+
+	public String getNumId() {
+		return numId;
+	}
+
+
+	public String getLastName() {
+		return lastName;
+	}
+
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+
+	public String getPhone() {
+		return phone;
+	}
+
+
+	public String getDirection() {
+		return direction;
+	}
 	
 	
 	

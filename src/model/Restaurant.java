@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 import exceptions.NegativeCostException;
+import model.Client.TypeId;
 
 public class Restaurant {
        
@@ -27,6 +28,8 @@ public class Restaurant {
 	private String adminName;
 	
 	private List<Product> products;
+	
+	
 		
 	
 	
@@ -64,6 +67,8 @@ public class Restaurant {
 		Product p = new Product(code, name, description, cost, restaurantNit);
 		products.add(p);
 	}
+	
+	
 	
 	
 }
