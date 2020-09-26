@@ -68,7 +68,9 @@ public class Restaurant {
 		products.add(p);
 	}
 	
-	
+	public List<Product> getProducts(){
+		return products;
+	}
 	
 	
 }

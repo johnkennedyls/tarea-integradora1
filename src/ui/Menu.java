@@ -38,6 +38,7 @@ public class Menu {
 		case 2: addProduct();                break;
 		case 3: addClient();                 break;
 		case 4: addOrder();                  break;
+		case 5: addProductsToTheOrder();      break;
 		case 0: exit();                      break;
 		default:                             break;
 		}
@@ -45,6 +46,11 @@ public class Menu {
 	}
 
 	
+
+	private void addProductsToTheOrder() {
+		programSystem.getRestaurants().
+		
+	}
 
 	private void addOrder() {
 		System.out.println("Write restaurant to do order");
@@ -171,7 +177,7 @@ public class Menu {
 	    menu += "2. Add a product.\n";
 	    menu += "3. Add a client.\n";
 	    menu += "4. Add a order.\n";
-	    menu += "5. Add product to the order\n";
+	    menu += "5. Add products to the order\n";
 	    menu += "0. Exit.";
 	    menu += "Please enter the option: ";
 
