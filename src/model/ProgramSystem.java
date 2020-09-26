@@ -1,9 +1,10 @@
 package model;
 
+
 import java.util.LinkedList;
 import java.util.List;
 
-import model.Client.TypeId;
+import model.TypeId;
 
 public class ProgramSystem {
 
@@ -56,6 +57,9 @@ public class ProgramSystem {
 	public void addClient(TypeId typeId, String numId, String lastName, String FirstName, String phone,  String direction) {
 		Client c = new Client(typeId, numId, lastName, FirstName, phone, direction);
 		clients.add(c);
+	}
+	
+	
 	}
 
 }

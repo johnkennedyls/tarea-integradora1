@@ -3,7 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 import exceptions.NegativeCostException;
-import model.Client.TypeId;
+
 
 public class Restaurant {
        

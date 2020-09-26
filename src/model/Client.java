@@ -1,12 +1,10 @@
 package model;
 
+import java.util.List;
+
 public class Client {
     
-	enum TypeId{
-		CC,
-		TI,
-		CE,
-	}
+	
 	
 	private TypeId typeId;
 	private String numId;
@@ -14,7 +12,7 @@ public class Client {
 	private String firstName;
 	private String phone;
 	private String direction;
-	
+	private List<Order> orders; 
 	
 	public Client(TypeId ty, String nit, String ln, String fn, String ph, String di) {
 		typeId = ty;

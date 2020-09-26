@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import exceptions.NegativeCostException;
 import model.*;
+import model.TypeId;
 
 
 public class Menu {
@@ -46,7 +47,8 @@ public class Menu {
 	private void addClient() {
 		System.out.println("Write the client type ID");
 		System.out.println("Write CC for Cedula ciudadan");
-		TypeId typeId = sc.nextLine();
+		String typeIdSc = sc.nextLine();
+		TypeId typeId = TypeId.valueOf(typeIdSc);
 		System.out.println("Write the client ID number");
 		String numId = sc.nextLine();
 		System.out.println("Write the client last name");
@@ -60,6 +62,8 @@ public class Menu {
 		
 		programSystem.addClient(typeId, numId, lastName, firstName, phone, direction);
 		
+		System.out.println("The client has added");
+		
 	}
 
 	private void exit() {
@@ -72,7 +76,7 @@ public class Menu {
 	System.out.println("Write the restaurant name to add product");
 	String restaurantName = sc.nextLine();
 	Restaurant restaurant = programSystem.searchRestaurant(restaurantName);
-	if(restaurant != null) {
+	//if(restaurant != null) {
 	System.out.println("Write the new product code");
 	String code = sc.nextLine();
 	System.out.println("Write the new product name");
@@ -88,9 +92,13 @@ public class Menu {
 		System.err.println(e.getMessage());
 		e.printStackTrace();
 	}
-	}else {
+	//}
+	/**else {
 		System.out.println("The restaurant does'nt exist");
 	}
+	*/
+	
+	System.out.println("The product has added");
 	
 		
 	}
@@ -126,6 +134,7 @@ public class Menu {
 	    menu  = "=============================\n";
 	    menu += "1. Add a restaurant.\n";
 	    menu += "2. Add a product.\n";
+	    menu += "3. Add a client.\n";
 	    menu += "0. Exit.";
 	    menu += "Please enter the option: ";
 
