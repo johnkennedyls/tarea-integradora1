@@ -33,12 +33,19 @@ public class Menu {
 		switch(option) {
 		case 1: addRestaurant();             break;
 		case 2: addProduct();                break;
+		case 3: add
+		case 0: exit();                      break;
 		default:     break;
 		}
 		
 	}
 
 	
+
+	private void exit() {
+		sc.close();
+		
+	}
 
 	private void addProduct() {
 		
@@ -58,10 +65,13 @@ public class Menu {
 	try {
 		restaurant.addProduct(code, name, description, cost, restaurantNit);
 	} catch (NegativeCostException e) {
-		
+		System.err.println(e.getMessage());
 		e.printStackTrace();
 	}
+	}else {
+		System.out.println("The restaurant does'nt exist");
 	}
+	
 		
 	}
 
@@ -78,6 +88,7 @@ public class Menu {
 	   	adminName = sc.nextLine();
 	   	
 	   	programSystem.addRestaurant(name, nit, adminName);  
+	   	System.out.println("The restaurant has added");
 	   	
 	}
 
@@ -93,8 +104,9 @@ public class Menu {
 	    menu  = "=============================\n";
 	    menu += "          ORDER SYSTEM\n";
 	    menu  = "=============================\n";
-	    menu += "1. Add a restaurant\n";
-	    menu += "2. Add a product\n";
+	    menu += "1. Add a restaurant.\n";
+	    menu += "2. Add a product.\n";
+	    menu += "0. Exit.";
 	    menu += "Please enter the option: ";
 
 		return menu;

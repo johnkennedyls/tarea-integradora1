@@ -17,7 +17,7 @@ public class Restaurant {
 	private String name;
 	
 	/**
-	 * Represent the retaurant nit
+	 * Represent the restaurant nit
 	 */
 	private String nit;
 	
